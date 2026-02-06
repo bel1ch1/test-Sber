@@ -1,0 +1,23 @@
+{
+  "name": "RAG Chatbot Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "python.defaultInterpreterPath": "/venv/bin/python",
+    "python.analysis.extraPaths": [
+      "/workspace"
+    ]
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance"
+  ],
+  "postCreateCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt",
+  "remoteUser": "root",
+  "runArgs": [
+    "--network=host"
+  ]
+}
