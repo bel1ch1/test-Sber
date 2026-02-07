@@ -4,6 +4,15 @@ from typing import Any, Dict, List, Optional
 
 from langchain_core.tools import BaseTool
 
+try:
+    from langsmith import traceable  # type: ignore
+except Exception:  # pragma: no cover
+    def traceable(*_args: Any, **_kwargs: Any):  # type: ignore
+        def _decorator(func: Any) -> Any:
+            return func
+
+        return _decorator
+
 Tool = BaseTool
 
 
@@ -52,4 +61,9 @@ class ToolExecutor:
             inp = _tool_input_dict(tool, raw)
         else:
             inp = raw if isinstance(raw, dict) else {"query": str(raw)}
-        return tool.invoke(inp)
+
+        @traceable(name=f"tool:{name}", run_type="tool")
+        def _invoke() -> Any:
+            return tool.invoke(inp)
+
+        return _invoke()

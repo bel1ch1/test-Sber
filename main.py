@@ -2,15 +2,17 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 import threading
 import time
 from pathlib import Path
 from typing import Dict, Iterable, List
 
-from chains import ChatChain
+from chains import ChatAgent
 from llm_wrapper.ollama_wrapper import create_llm
 from rag import NoopRetriever, QdrantRetriever
 from tools import ToolExecutor, moscow_time, system_load
+from utils import configure_langsmith, sanitize_text
 
 DEFAULT_COLLECTION_NAME = "rag_docs"
 UPLOADS_DIR = Path("data/uploads")
@@ -248,10 +250,23 @@ def show_main_menu() -> str:
 
 def main() -> None:
     """Run the console chat: LLM from llm_wrapper, NoopRetriever for RAG, tools via ToolExecutor."""
+    # Avoid Unicode surrogate characters from terminal I/O on some systems.
+    # Surrogates (U+D800..U+DFFF) are not encodable as UTF-8 and may crash HTTP/JSON layers.
+    try:
+        sys.stdin.reconfigure(errors="replace")  # type: ignore[attr-defined]
+        sys.stdout.reconfigure(errors="replace")  # type: ignore[attr-defined]
+        sys.stderr.reconfigure(errors="replace")  # type: ignore[attr-defined]
+    except Exception:
+        pass
+
+    # Optional: enable LangSmith tracing (LLM calls, chain runs) if configured via env vars.
+    # This does not affect using a local LLM (Ollama) for inference.
+    configure_langsmith()
+
     llm = create_llm()
     retriever = build_retriever()
     tools = ToolExecutor(tools=[system_load, moscow_time])
-    chat_chain = ChatChain(llm=llm, retriever=retriever, tools=tools)
+    chat_chain = ChatAgent(llm=llm, retriever=retriever, tools=tools)
 
     history: List[Dict[str, str]] = []
 
@@ -296,20 +311,49 @@ def main() -> None:
             if not user_input:
                 continue
 
+            user_input = sanitize_text(user_input)
             history.append({"role": "user", "content": user_input})
 
             try:
-                assistant_reply = chat_chain.run(
+                result = chat_chain.run_verbose(
                     user_input=user_input,
                     history=history,
                     use_rag=True,
                     use_tools=True,
                 )
+                assistant_reply = result.get("final_answer", "")
+                decision = result.get("decision", "")
+                tool_action = result.get("tool_action") or {}
+                tool_name = str(tool_action.get("name", "")).strip()
+                tool_input = str(tool_action.get("input", "")).strip()
+                used_rag = result.get("use_rag", False)
+                used_tools = result.get("use_tools", False)
             except Exception as exc:  # noqa: BLE001
                 assistant_reply = f"Ошибка при обращении к модели: {exc}"
+                decision = ""
+                tool_name = ""
+                tool_input = ""
+                used_rag = False
+                used_tools = False
 
+            assistant_reply = sanitize_text(assistant_reply)
+            # Console UI expects a single "assistant message" line. Collapse any accidental
+            # multi-line/model-format output (e.g., ReAct blocks) into one line.
+            assistant_reply = " ".join(assistant_reply.split()).strip()
             history.append({"role": "assistant", "content": assistant_reply})
-            print(f"Модель: {assistant_reply}\n")
+            if decision:
+                decision_line = f"Решение: {decision}"
+                if used_rag:
+                    decision_line += " | RAG: да"
+                if used_tools:
+                    decision_line += " | Tools: да"
+                print(decision_line)
+            if tool_name:
+                if tool_input:
+                    print(f"Инструмент: {tool_name} (input: {tool_input})")
+                else:
+                    print(f"Инструмент: {tool_name}")
+            print(f"Ассистент: {assistant_reply}\n")
 
 
 if __name__ == "__main__":
