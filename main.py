@@ -12,7 +12,7 @@ from chains import ChatAgent
 from llm_wrapper.ollama_wrapper import create_llm
 from rag import NoopRetriever, QdrantRetriever
 from tools import ToolExecutor, moscow_time, system_load
-from utils import configure_langsmith, sanitize_text
+from utils import configure_agent_logging, configure_langsmith, log_agent_event, sanitize_text
 
 DEFAULT_COLLECTION_NAME = "rag_docs"
 UPLOADS_DIR = Path("data/uploads")
@@ -262,6 +262,7 @@ def main() -> None:
     # Optional: enable LangSmith tracing (LLM calls, chain runs) if configured via env vars.
     # This does not affect using a local LLM (Ollama) for inference.
     configure_langsmith()
+    configure_agent_logging()
 
     llm = create_llm()
     retriever = build_retriever()
@@ -354,6 +355,20 @@ def main() -> None:
                 else:
                     print(f"Инструмент: {tool_name}")
             print(f"Ассистент: {assistant_reply}\n")
+
+            log_agent_event(
+                event="chat_turn",
+                message="Agent completed a turn",
+                data={
+                    "user_input": user_input,
+                    "assistant_reply": assistant_reply,
+                    "decision": decision,
+                    "tool_name": tool_name,
+                    "tool_input": tool_input,
+                    "use_rag": used_rag,
+                    "use_tools": used_tools,
+                },
+            )
 
 
 if __name__ == "__main__":

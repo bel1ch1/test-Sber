@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import re
 from typing import Any, Dict, Iterable, List, Mapping, Optional, TypedDict
 
@@ -11,6 +12,7 @@ from prompts import build_chat_prompt
 from rag import BaseRetriever
 from tools import ToolExecutor
 from utils import sanitize_messages, sanitize_text
+from utils import log_agent_event
 
 try:
     from langsmith import traceable  # type: ignore
@@ -142,15 +144,35 @@ class ChatAgent:
         force_retrieval = bool(state.get("force_retrieval", False))
 
         if force_retrieval:
-            return {
+            result = {
                 "decision": "retrieval-forced",
                 "use_rag": True,
                 "use_tools": False,
                 "force_retrieval": True,
             }
+            log_agent_event(
+                event="decide",
+                message="Agent decision (forced retrieval)",
+                data={
+                    "decision": result["decision"],
+                    "use_rag": result["use_rag"],
+                    "use_tools": result["use_tools"],
+                },
+            )
+            return result
 
         if not base_use_rag and not base_use_tools:
-            return {"decision": "none", "use_rag": False, "use_tools": False}
+            result = {"decision": "none", "use_rag": False, "use_tools": False}
+            log_agent_event(
+                event="decide",
+                message="Agent decision",
+                data={
+                    "decision": result["decision"],
+                    "use_rag": result["use_rag"],
+                    "use_tools": result["use_tools"],
+                },
+            )
+            return result
 
         tool_names = [getattr(tool, "name", "") for tool in self.tools.list_tools()]
         tool_names = [name for name in tool_names if name]
@@ -210,7 +232,17 @@ class ChatAgent:
             use_rag = base_use_rag
             resolved = "fallback"
 
-        return {"decision": resolved, "use_tools": use_tools, "use_rag": use_rag}
+        result = {"decision": resolved, "use_tools": use_tools, "use_rag": use_rag}
+        log_agent_event(
+            event="decide",
+            message="Agent decision",
+            data={
+                "decision": result["decision"],
+                "use_rag": result["use_rag"],
+                "use_tools": result["use_tools"],
+            },
+        )
+        return result
 
     def _route_from_decide(self, state: AgentState) -> str:
         if state.get("use_rag", False):
@@ -227,6 +259,14 @@ class ChatAgent:
             context_chunks = self.retriever.retrieve(user_input, top_k=self.DEFAULT_TOP_K)
             context_chunks = [sanitize_text(c) for c in context_chunks]
 
+        log_agent_event(
+            event="retrieve",
+            message="Retrieval completed",
+            data={
+                "use_rag": use_rag,
+                "chunks": len(context_chunks),
+            },
+        )
         return {"context_chunks": context_chunks, "user_input": user_input}
 
     @traceable(name="agent_plan", run_type="chain")
@@ -250,6 +290,14 @@ class ChatAgent:
         )
 
         tool_action = self._parse_action(str(first_response)) if use_tools else None
+        log_agent_event(
+            event="plan",
+            message="Plan step completed",
+            data={
+                "use_tools": use_tools,
+                "tool_action": tool_action,
+            },
+        )
         return {"first_response": str(first_response), "tool_action": tool_action}
 
     def _route_from_plan(self, state: AgentState) -> str:
@@ -267,11 +315,22 @@ class ChatAgent:
         action = state.get("tool_action") or {}
         tool_name = action.get("name", "").strip()
         tool_input = action.get("input", "")
+        logger = logging.getLogger("agent")
 
         try:
             tool_result = self.tools.call(tool_name, tool_input)
         except Exception as exc:  # noqa: BLE001
             tool_result = f"Tool call failed for '{tool_name}': {exc}"
+            logger.exception(
+                "Tool call failed",
+                extra={
+                    "extra": {
+                        "event": "tool_error",
+                        "tool_name": tool_name,
+                        "tool_input": tool_input,
+                    }
+                },
+            )
 
         return {"tool_result": sanitize_text(tool_result)}
 
@@ -279,12 +338,23 @@ class ChatAgent:
     def _node_finalize(self, state: AgentState) -> Dict[str, Any]:
         first_response = state.get("first_response", "")
         final_answer = self._extract_final_answer(str(first_response))
-        return {"final_answer": sanitize_text(final_answer)}
+        final_answer = sanitize_text(final_answer)
+        log_agent_event(
+            event="finalize",
+            message="Final answer prepared",
+            data={"length": len(final_answer)},
+        )
+        return {"final_answer": final_answer}
 
     @traceable(name="agent_finalize_after_tool", run_type="chain")
     def _node_finalize_after_tool(self, state: AgentState) -> Dict[str, Any]:
         tool_result = sanitize_text(state.get("tool_result", ""))
         if tool_result:
+            log_agent_event(
+                event="finalize",
+                message="Final answer from tool result",
+                data={"length": len(tool_result)},
+            )
             return {"final_answer": tool_result}
 
         prompt_messages = build_chat_prompt(
@@ -304,6 +374,11 @@ class ChatAgent:
         )
 
         final_answer = sanitize_text(self._extract_final_answer(str(final_response)))
+        log_agent_event(
+            event="finalize",
+            message="Final answer prepared after tool",
+            data={"length": len(final_answer)},
+        )
         return {"final_answer": final_answer}
 
     @traceable(name="chat_turn", run_type="chain")
