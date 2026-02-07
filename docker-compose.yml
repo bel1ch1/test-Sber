@@ -1,0 +1,99 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:6333:6333"
+      - "0.0.0.0:6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:11434:11434"
+    gpus: all
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      # Bind on all interfaces so other containers (and host) can reach it.
+      - OLLAMA_HOST=0.0.0.0:11434
+      - OLLAMA_KEEP_ALIVE=24h
+
+  ollama-bootstrap:
+    image: python:3.11-slim
+    depends_on:
+      ollama:
+        condition: service_started
+    restart: "no"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_PULL_MODELS=qwen2.5:7b,mistral:7b,nomic-embed-text
+      - OLLAMA_WAIT_TIMEOUT_S=300
+      - OLLAMA_PULL_TIMEOUT_S=3600
+    volumes:
+      - ./scripts:/scripts:ro
+    command: ["python", "/scripts/ollama_pull.py"]
+
+  rag-eval:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      qdrant:
+        condition: service_started
+      ollama:
+        condition: service_started
+      ollama-bootstrap:
+        condition: service_completed_successfully
+    working_dir: /app
+    command: ["python", "evaluate_rag.py", "--config", "rag_eval_config.json"]
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - PYTHONIOENCODING=utf-8:replace
+      # LangSmith (optional)
+      # - LANGCHAIN_TRACING_V2=true
+      # - LANGCHAIN_API_KEY=ls__...
+      # - LANGCHAIN_PROJECT=test-Sber
+      # - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+    volumes:
+      - ./data/uploads:/app/data/uploads
+    profiles: ["eval"]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      qdrant:
+        condition: service_started
+      ollama:
+        condition: service_started
+      ollama-bootstrap:
+        condition: service_completed_successfully
+    working_dir: /app
+    command: ["python", "main.py"]
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - PYTHONIOENCODING=utf-8:replace
+      # LangSmith (optional). Set these in your shell or in a .env file.
+      # - LANGCHAIN_TRACING_V2=true
+      # - LANGCHAIN_API_KEY=ls__...
+      # - LANGCHAIN_PROJECT=test-Sber
+      # - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+    volumes:
+      - ./data/uploads:/app/data/uploads
+    stdin_open: true
+    tty: true
+    profiles: ["cli"]
+
+volumes:
+  qdrant_data:
+  ollama_data:
