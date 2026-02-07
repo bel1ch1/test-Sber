@@ -1,0 +1,1913 @@
+[
+  {
+    "input": "Какой компанией основана Павлом Остроградским и в каком году?",
+    "expected_output": "Компания ТехnoВизион основана в 2010 году.",
+    "source_file": "test_rag_001.txt"
+  },
+  {
+    "input": "Какие направления развития у компании ТехnoВизион?",
+    "expected_output": "Машинное обучение, естественная обработка языка, компьютерное зрение.",
+    "source_file": "test_rag_001.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает в компании ТехnoВизион на 2025 год?",
+    "expected_output": "450 сотрудников.",
+    "source_file": "test_rag_001.txt"
+  },
+  {
+    "input": "Какие проекты квадрокоптеров разрабатывает ТехnoВизион?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_001.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда родился математик Леонард Эйлер и в какой стране?",
+    "expected_output": "Родился в 1707 году в Швейцарии.",
+    "source_file": "test_rag_002.txt"
+  },
+  {
+    "input": "Сколько научных работ опубликовал Леонард Эйлер?",
+    "expected_output": "Более 800 научных работ.",
+    "source_file": "test_rag_002.txt"
+  },
+  {
+    "input": "В какой академии наук работал Эйлер?",
+    "expected_output": "В Петербургской Академии наук под покровительством Екатерины II.",
+    "source_file": "test_rag_002.txt"
+  },
+  {
+    "input": "Какие опера написал Эйлер и где они были исполнены?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_002.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто основал турфирму ВелиКолпин Тур и когда?",
+    "expected_output": "Основана в 2008 году предпринимателем Василием Великогоровым и его партнером Антоном Колпином.",
+    "source_file": "test_rag_003.txt"
+  },
+  {
+    "input": "В скольких странах турфирма предлагает туры?",
+    "expected_output": "В 45 странах мира.",
+    "source_file": "test_rag_003.txt"
+  },
+  {
+    "input": "Сколько туристов проходит через фирму ежегодно?",
+    "expected_output": "Более 8000 туристов.",
+    "source_file": "test_rag_003.txt"
+  },
+  {
+    "input": "Какие круизные корабли использует ВелиКолпин Тур для своих экскурсий?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_003.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто руководил командой исследователей квантовых вычислений?",
+    "expected_output": "Профессор Петр Квантов.",
+    "source_file": "test_rag_004.txt"
+  },
+  {
+    "input": "На сколько процентов новый алгоритм повышает стабильность кубитов?",
+    "expected_output": "На 40 процентов.",
+    "source_file": "test_rag_004.txt"
+  },
+  {
+    "input": "Какой журнал опубликовал результаты исследования квантовых технологий?",
+    "expected_output": "Журнал Nature Computing.",
+    "source_file": "test_rag_004.txt"
+  },
+  {
+    "input": "Какие финансирования получил проект Квантова от европейских фондов?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_004.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда родился писатель Виктор Мельницкий?",
+    "expected_output": "В 1965 году.",
+    "source_file": "test_rag_005.txt"
+  },
+  {
+    "input": "Какое произведение писателя получило золотую пальмовую ветвь на Каннском фестивале?",
+    "expected_output": "Произведение 'Тень в зеркале'.",
+    "source_file": "test_rag_005.txt"
+  },
+  {
+    "input": "На сколько языков переведены книги Виктора Мельницкого?",
+    "expected_output": "На 25 языков.",
+    "source_file": "test_rag_005.txt"
+  },
+  {
+    "input": "Какие стихотворения написал Мельницкий в жанре экспериментальной поэзии?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_005.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан футбольный клуб Динамо Чемпионов?",
+    "expected_output": "В 1952 году.",
+    "source_file": "test_rag_006.txt"
+  },
+  {
+    "input": "Сколько вместимость стадиона Олимпийский клуба Динамо?",
+    "expected_output": "70000 зрителей.",
+    "source_file": "test_rag_006.txt"
+  },
+  {
+    "input": "Сколько чемпионатов подряд выиграл клуб с 2021 по 2023?",
+    "expected_output": "Три чемпионата подряд.",
+    "source_file": "test_rag_006.txt"
+  },
+  {
+    "input": "Сколько международных кубков выиграл клуб в своей истории?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_006.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто разработал архитектурный проект Зеленый город?",
+    "expected_output": "Архитектор Александр Зеленовский.",
+    "source_file": "test_rag_007.txt"
+  },
+  {
+    "input": "Какой бюджет проекта Зеленый город?",
+    "expected_output": "2.3 миллиарда рублей.",
+    "source_file": "test_rag_007.txt"
+  },
+  {
+    "input": "Сколько жителей будет вмещать город Зеленый?",
+    "expected_output": "200000 жителей.",
+    "source_file": "test_rag_007.txt"
+  },
+  {
+    "input": "Какие инновационные источники энергии планируется использовать в проекте?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_007.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто возглавляет космическую миссию Марс-2025?",
+    "expected_output": "Русский космонавт Владимир Звездин.",
+    "source_file": "test_rag_008.txt"
+  },
+  {
+    "input": "Когда запланирован запуск миссии Марс-2025?",
+    "expected_output": "В апреле 2025 года.",
+    "source_file": "test_rag_008.txt"
+  },
+  {
+    "input": "Сколько продлится миссия на Марс?",
+    "expected_output": "18 месяцев.",
+    "source_file": "test_rag_008.txt"
+  },
+  {
+    "input": "Какие марсоходы будут использоваться в миссии?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_008.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Какой ученый возглавил исследования по разработке нового лекарства от диабета?",
+    "expected_output": "Химик Константин Медицынин.",
+    "source_file": "test_rag_009.txt"
+  },
+  {
+    "input": "Какой процент эффективности показало новое лекарство от диабета?",
+    "expected_output": "89% эффективность.",
+    "source_file": "test_rag_009.txt"
+  },
+  {
+    "input": "В скольких странах проводились клинические испытания лекарства?",
+    "expected_output": "В 15 странах.",
+    "source_file": "test_rag_009.txt"
+  },
+  {
+    "input": "Какие побочные эффекты имеет новое лекарство при длительном применении?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_009.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда впервые был проведен фестиваль Волны Вдохновения?",
+    "expected_output": "В 2015 году.",
+    "source_file": "test_rag_010.txt"
+  },
+  {
+    "input": "Сколько исполнителей выступило на последнем фестивале в 2024 году?",
+    "expected_output": "85 исполнителей.",
+    "source_file": "test_rag_010.txt"
+  },
+  {
+    "input": "Сколько посетителей посетило фестиваль в 2024 году?",
+    "expected_output": "120000 посетителей.",
+    "source_file": "test_rag_010.txt"
+  },
+  {
+    "input": "Какие международные награды получил фестиваль за оригинальность?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_010.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто инициирует экологический проект Чистые реки России?",
+    "expected_output": "Эколог Наталья Водяникова.",
+    "source_file": "test_rag_011.txt"
+  },
+  {
+    "input": "Сколько тонн мусора собрали волонтеры из рек за три года?",
+    "expected_output": "Более 2000 тонн мусора.",
+    "source_file": "test_rag_011.txt"
+  },
+  {
+    "input": "На сколько раз увеличилась популяция рыбы в результате проекта?",
+    "expected_output": "В три раза.",
+    "source_file": "test_rag_011.txt"
+  },
+  {
+    "input": "Какие тяжелые металлы удалось извлечь из рек в результате проекта?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_011.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана пекарня Хлебная Казна семьей Булочковых?",
+    "expected_output": "В 1945 году.",
+    "source_file": "test_rag_021.txt"
+  },
+  {
+    "input": "Сколько тонн хлеба производит пекарня в день?",
+    "expected_output": "50 тонн хлеба.",
+    "source_file": "test_rag_021.txt"
+  },
+  {
+    "input": "В скольких магазинах поставляется продукция пекарни?",
+    "expected_output": "В 200 магазинов.",
+    "source_file": "test_rag_021.txt"
+  },
+  {
+    "input": "Какие экзотические ингредиенты используются в специальных линиях хлеба?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_021.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была построена Крепость Стена времени в Крыму?",
+    "expected_output": "В 1475 году.",
+    "source_file": "test_rag_022.txt"
+  },
+  {
+    "input": "Кто проводил исследования истории крепости?",
+    "expected_output": "Советский историк Борис Крепостнов.",
+    "source_file": "test_rag_022.txt"
+  },
+  {
+    "input": "Сколько туристов посещают крепость ежегодно?",
+    "expected_output": "Более 500000 туристов.",
+    "source_file": "test_rag_022.txt"
+  },
+  {
+    "input": "Какие артефакты средневекового оружия хранятся в крепости?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_022.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто основал компанию МашинМысль и в какой год?",
+    "expected_output": "Инженер Валентин Автоматов в 2015 году.",
+    "source_file": "test_rag_023.txt"
+  },
+  {
+    "input": "Сколько роботизированных систем поставила компания?",
+    "expected_output": "Более 300 систем.",
+    "source_file": "test_rag_023.txt"
+  },
+  {
+    "input": "Какой процент дохода инвестирует компания в НИОКР?",
+    "expected_output": "40% дохода.",
+    "source_file": "test_rag_023.txt"
+  },
+  {
+    "input": "Какие роботизированные системы экспортирует компания в Японию?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_023.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда Анастасия Платьева создала свой бренд моды?",
+    "expected_output": "В 2008 году.",
+    "source_file": "test_rag_024.txt"
+  },
+  {
+    "input": "Сколько предметов одежды производит компания ежегодно?",
+    "expected_output": "50000 предметов.",
+    "source_file": "test_rag_024.txt"
+  },
+  {
+    "input": "В скольких странах имеет бутики компания Анастасии?",
+    "expected_output": "В 15 странах.",
+    "source_file": "test_rag_024.txt"
+  },
+  {
+    "input": "Какие технологии 3D печати использует компания при производстве платьев?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_024.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Какая площадь леса управляется лесничеством Сибирский лес?",
+    "expected_output": "500000 гектаров.",
+    "source_file": "test_rag_025.txt"
+  },
+  {
+    "input": "Сколько деревьев садит лесничество на каждое спиленное?",
+    "expected_output": "Три дерева.",
+    "source_file": "test_rag_025.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает в лесничестве?",
+    "expected_output": "95 человек.",
+    "source_file": "test_rag_025.txt"
+  },
+  {
+    "input": "Какие редкие виды животных водятся в лесах лесничества?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_025.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто открыл новый вид бактерии, разлагающей полиэтилен?",
+    "expected_output": "Биолог Людмила Микроскопия.",
+    "source_file": "test_rag_026.txt"
+  },
+  {
+    "input": "Сколько лет проводила исследование команда Микроскопии?",
+    "expected_output": "Три года.",
+    "source_file": "test_rag_026.txt"
+  },
+  {
+    "input": "Сколько молодых ученых возглавляет Людмила Микроскопия?",
+    "expected_output": "12 молодых ученых.",
+    "source_file": "test_rag_026.txt"
+  },
+  {
+    "input": "Какие промышленные партнеры планирует привлечь Микроскопия для коммерциализации?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_026.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана спортивная школа Чемпионская подготовка?",
+    "expected_output": "В 1989 году.",
+    "source_file": "test_rag_027.txt"
+  },
+  {
+    "input": "Сколько учится спортсменов в школе?",
+    "expected_output": "350 спортсменов.",
+    "source_file": "test_rag_027.txt"
+  },
+  {
+    "input": "Сколько тренеров работает в школе?",
+    "expected_output": "25 тренеров.",
+    "source_file": "test_rag_027.txt"
+  },
+  {
+    "input": "Какой процент спортсменов школы стали членами национальной сборной?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_027.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана винодельня в долине Чёрного сада?",
+    "expected_output": "В 1990 году.",
+    "source_file": "test_rag_028.txt"
+  },
+  {
+    "input": "Какую площадь занимают виноградники винодельни?",
+    "expected_output": "200 гектаров.",
+    "source_file": "test_rag_028.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется вино Гроздева?",
+    "expected_output": "В 30 странах.",
+    "source_file": "test_rag_028.txt"
+  },
+  {
+    "input": "Какую среднюю цену имеют премиальные серии вина на международном рынке?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_028.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько лет Игорь Громкоголосов работает в телевидении?",
+    "expected_output": "35 лет.",
+    "source_file": "test_rag_029.txt"
+  },
+  {
+    "input": "Сколько раз Игорь получил награду Золотой микрофон?",
+    "expected_output": "Четыре раза.",
+    "source_file": "test_rag_029.txt"
+  },
+  {
+    "input": "Сколько книг написал журналист Громкоголосов?",
+    "expected_output": "Две книги.",
+    "source_file": "test_rag_029.txt"
+  },
+  {
+    "input": "Какие известные политики были разоблачены в его журналистских расследованиях?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_029.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания ТесlaРус?",
+    "expected_output": "В 2016 году.",
+    "source_file": "test_rag_030.txt"
+  },
+  {
+    "input": "Сколько электромобилей выпущено к 2024 году?",
+    "expected_output": "45000 электромобилей.",
+    "source_file": "test_rag_030.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на производстве ТесlaРус?",
+    "expected_output": "2500 сотрудников.",
+    "source_file": "test_rag_030.txt"
+  },
+  {
+    "input": "Какие планы по расширению в страны Восточной Европы имеет ТесlaРус?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_030.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Какую площадь земли занимает агрокомпания Золотое зерно?",
+    "expected_output": "8000 гектаров.",
+    "source_file": "test_rag_031.txt"
+  },
+  {
+    "input": "Кто основал агрокомпанию и когда?",
+    "expected_output": "Фермер Евгений Урожайный в 1995 году.",
+    "source_file": "test_rag_031.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется зерно компании?",
+    "expected_output": "В 12 странах.",
+    "source_file": "test_rag_031.txt"
+  },
+  {
+    "input": "Какие инновационные методы ирригации применяет Золотое зерно?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_031.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько зданий спроектировал архитектор Николай Небоскреб?",
+    "expected_output": "25 зданий.",
+    "source_file": "test_rag_032.txt"
+  },
+  {
+    "input": "Какая высота офисного центра Вершина?",
+    "expected_output": "180 метров.",
+    "source_file": "test_rag_032.txt"
+  },
+  {
+    "input": "Сколько сотрудников в архитектурной мастерской Небоскреба?",
+    "expected_output": "40 сотрудников.",
+    "source_file": "test_rag_032.txt"
+  },
+  {
+    "input": "Какие устойчивые строительные материалы использует Небоскреб в своих проектах?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_032.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько лет Ксения Исцеленьева проводила исследования иммунотерапии?",
+    "expected_output": "15 лет.",
+    "source_file": "test_rag_033.txt"
+  },
+  {
+    "input": "Какой процент эффективности показал метод Исцеленьевой?",
+    "expected_output": "78% эффективность.",
+    "source_file": "test_rag_033.txt"
+  },
+  {
+    "input": "Сколько научных статей опубликовала Ксения?",
+    "expected_output": "120 научных статей.",
+    "source_file": "test_rag_033.txt"
+  },
+  {
+    "input": "Какие университеты высказали интерес к методу Исцеленьевой?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_033.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Какую премию получил фотограф Максимилиан Линзовский?",
+    "expected_output": "Премию имени Картье-Брессона.",
+    "source_file": "test_rag_034.txt"
+  },
+  {
+    "input": "Сколько регионов России посетил фотограф?",
+    "expected_output": "60 регионов.",
+    "source_file": "test_rag_034.txt"
+  },
+  {
+    "input": "Сколько человек посетило выставку Лица земли русской?",
+    "expected_output": "200000 человек.",
+    "source_file": "test_rag_034.txt"
+  },
+  {
+    "input": "Какие музеи мира выставили фотографии Линзовского постоянно?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_034.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана финансовая компания ИнвестГрупп?",
+    "expected_output": "В 2000 году.",
+    "source_file": "test_rag_035.txt"
+  },
+  {
+    "input": "Какую стоимость активов управляет ИнвестГрупп?",
+    "expected_output": "15 миллиардов рублей.",
+    "source_file": "test_rag_035.txt"
+  },
+  {
+    "input": "Сколько человек работает в команде ИнвестГрупп?",
+    "expected_output": "85 человек.",
+    "source_file": "test_rag_035.txt"
+  },
+  {
+    "input": "Какой средний доход получают клиенты ИнвестГрупп ежегодно?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_035.txt",
+    "is_negative": true
+  },
+  {
+    "input": "На каком фестивале фильм Вероники Киноленты получил приз?",
+    "expected_output": "На Берлинском кинофестивале.",
+    "source_file": "test_rag_036.txt"
+  },
+  {
+    "input": "Какой фильм Вероники был показан на Каннском фестивале?",
+    "expected_output": "Фильм 'Судьба на краю'.",
+    "source_file": "test_rag_036.txt"
+  },
+  {
+    "input": "Сколько миллионов зрителей смотрели фильмы Киноленты?",
+    "expected_output": "Более 5 миллионов.",
+    "source_file": "test_rag_036.txt"
+  },
+  {
+    "input": "Какие актеры международного уровня работали с режиссером Киноленты?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_036.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана верфь Морской гигант?",
+    "expected_output": "В 1932 году.",
+    "source_file": "test_rag_037.txt"
+  },
+  {
+    "input": "Сколько кораблей изготовила верфь?",
+    "expected_output": "Более 600 кораблей.",
+    "source_file": "test_rag_037.txt"
+  },
+  {
+    "input": "Сколько рабочих и инженеров работает на верфи?",
+    "expected_output": "3500 рабочих и инженеров.",
+    "source_file": "test_rag_037.txt"
+  },
+  {
+    "input": "Какие стандарты МО международной морской организации соблюдает верфь?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_037.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто является парфюмером и создает элитные духи?",
+    "expected_output": "Парфюмер Вадим Ароматов.",
+    "source_file": "test_rag_038.txt"
+  },
+  {
+    "input": "Сколько уникальных формул духов создал Вадим?",
+    "expected_output": "Более 200 уникальных формул.",
+    "source_file": "test_rag_038.txt"
+  },
+  {
+    "input": "Какой аромат Ароматова продан тиражом 50 миллионов флаконов?",
+    "expected_output": "Аромат 'Тайна ночи'.",
+    "source_file": "test_rag_038.txt"
+  },
+  {
+    "input": "Какие редкие растительные ингредиенты использует Ароматов в своих композициях?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_038.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана лесопилка Сосновый берег?",
+    "expected_output": "В 1960 году.",
+    "source_file": "test_rag_039.txt"
+  },
+  {
+    "input": "Сколько кубометров пиломатериалов производит лесопилка?",
+    "expected_output": "120000 кубометров.",
+    "source_file": "test_rag_039.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на лесопилке?",
+    "expected_output": "250 сотрудников.",
+    "source_file": "test_rag_039.txt"
+  },
+  {
+    "input": "Какие специальные обработки древесины предлагает лесопилка для устойчивости к огню?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_039.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан горнолыжный курорт Белая вершина?",
+    "expected_output": "В 1992 году.",
+    "source_file": "test_rag_040.txt"
+  },
+  {
+    "input": "Сколько километров горнолыжных трасс на курорте?",
+    "expected_output": "45 километров.",
+    "source_file": "test_rag_040.txt"
+  },
+  {
+    "input": "Сколько гостей вмещает отель курорта?",
+    "expected_output": "2000 гостей.",
+    "source_file": "test_rag_040.txt"
+  },
+  {
+    "input": "Какие трассы мирового уровня для выполнения трюков имеет курорт?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_040.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько животных в зоопарке Животная планета?",
+    "expected_output": "Более 3500 животных.",
+    "source_file": "test_rag_041.txt"
+  },
+  {
+    "input": "Когда был основан зоопарк?",
+    "expected_output": "В 1963 году.",
+    "source_file": "test_rag_041.txt"
+  },
+  {
+    "input": "Сколько видов животных в зоопарке?",
+    "expected_output": "550 видов.",
+    "source_file": "test_rag_041.txt"
+  },
+  {
+    "input": "Какие редкие виды животных находятся под охраной в зоопарке?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_041.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Как много часов работы требуется на изготовление одних часов мастером?",
+    "expected_output": "300 часов.",
+    "source_file": "test_rag_042.txt"
+  },
+  {
+    "input": "Какая цена одних часов мастера Маятниковского?",
+    "expected_output": "500000 евро.",
+    "source_file": "test_rag_042.txt"
+  },
+  {
+    "input": "Сколько мастеров работает на ателье?",
+    "expected_output": "25 мастеров.",
+    "source_file": "test_rag_042.txt"
+  },
+  {
+    "input": "Какие знаменитые коллекционеры мира владеют часами Маятниковского?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_042.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана авиационная школа Небо России?",
+    "expected_output": "В 1987 году.",
+    "source_file": "test_rag_043.txt"
+  },
+  {
+    "input": "Сколько пилотов выпустила школа?",
+    "expected_output": "Более 2000 пилотов.",
+    "source_file": "test_rag_043.txt"
+  },
+  {
+    "input": "Сколько учебных самолетов имеет школа?",
+    "expected_output": "35 самолетов.",
+    "source_file": "test_rag_043.txt"
+  },
+  {
+    "input": "Какие симуляторы самолетов нового поколения используются в школе?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_043.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана сыродельня Молочные традиции?",
+    "expected_output": "В 1980 году.",
+    "source_file": "test_rag_044.txt"
+  },
+  {
+    "input": "Сколько тонн сыра производит сыродельня?",
+    "expected_output": "500 тонн.",
+    "source_file": "test_rag_044.txt"
+  },
+  {
+    "input": "Сколько человек работает на сыродельне?",
+    "expected_output": "120 человек.",
+    "source_file": "test_rag_044.txt"
+  },
+  {
+    "input": "Какие экзотические сорта сыра экспортирует сыродельня в Швейцарию?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_044.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда Дмитрий Клавишный выиграл Конкурс имени Ван Клиберна?",
+    "expected_output": "В 19 лет.",
+    "source_file": "test_rag_045.txt"
+  },
+  {
+    "input": "Какой тираж дисков пианиста Клавишного продан?",
+    "expected_output": "Более 2 миллионов дисков.",
+    "source_file": "test_rag_045.txt"
+  },
+  {
+    "input": "Сколько концертных записей у Дмитрия?",
+    "expected_output": "Более 150 записей.",
+    "source_file": "test_rag_045.txt"
+  },
+  {
+    "input": "Какие редкие музыкальные инструменты использовал Клавишный для экспериментов?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_045.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько отелей в сети Звездный отдых?",
+    "expected_output": "35 отелей.",
+    "source_file": "test_rag_046.txt"
+  },
+  {
+    "input": "Когда была основана сеть отелей?",
+    "expected_output": "В 1999 году.",
+    "source_file": "test_rag_046.txt"
+  },
+  {
+    "input": "Сколько гостей принимают отели ежегодно?",
+    "expected_output": "Более 500000 гостей.",
+    "source_file": "test_rag_046.txt"
+  },
+  {
+    "input": "Какие спа и оздоровительные центры есть при отелях сети?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_046.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько лет Валентина Мыслевая преподает в МГУ?",
+    "expected_output": "Более 30 лет.",
+    "source_file": "test_rag_047.txt"
+  },
+  {
+    "input": "Сколько студентов посещают лекции Мыслевой?",
+    "expected_output": "Более 800 студентов.",
+    "source_file": "test_rag_047.txt"
+  },
+  {
+    "input": "Сколько монографий опубликовала Валентина?",
+    "expected_output": "5 монографий.",
+    "source_file": "test_rag_047.txt"
+  },
+  {
+    "input": "Какие новые философские школы основала Мыслевая в научном сообществе?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_047.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Какую высоту имеет памятник летчику работы Виктора Ваяльщика?",
+    "expected_output": "15 метров.",
+    "source_file": "test_rag_048.txt"
+  },
+  {
+    "input": "Сколько скульпторов-учеников в мастерской Ваяльщика?",
+    "expected_output": "20 учеников.",
+    "source_file": "test_rag_048.txt"
+  },
+  {
+    "input": "В скольких странах экспортируются скульптуры?",
+    "expected_output": "В 25 странах.",
+    "source_file": "test_rag_048.txt"
+  },
+  {
+    "input": "Какие техники резьбы по камню применяет Ваяльщик в своих произведениях?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_048.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Велогеометрия?",
+    "expected_output": "В 2005 году.",
+    "source_file": "test_rag_049.txt"
+  },
+  {
+    "input": "Сколько велосипедов производит компания?",
+    "expected_output": "50000 велосипедов.",
+    "source_file": "test_rag_049.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на производстве?",
+    "expected_output": "180 сотрудников.",
+    "source_file": "test_rag_049.txt"
+  },
+  {
+    "input": "Какие велосипеды для экстремального спорта разрабатывает компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_049.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана парикмахерская сеть ПрикрасаТекс?",
+    "expected_output": "В 1992 году.",
+    "source_file": "test_rag_050.txt"
+  },
+  {
+    "input": "Сколько салонов в сети ПрикрасаТекс?",
+    "expected_output": "120 салонов.",
+    "source_file": "test_rag_050.txt"
+  },
+  {
+    "input": "Сколько клиентов посещают салоны ежегодно?",
+    "expected_output": "Более 1 миллиона клиентов.",
+    "source_file": "test_rag_050.txt"
+  },
+  {
+    "input": "Какие инновационные технологии окрашивания волос используются в салонах?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_050.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Кто основал фонд благотворительности Надежда и будущее?",
+    "expected_output": "Медсестра Татьяна Милосердная.",
+    "source_file": "test_rag_051.txt"
+  },
+  {
+    "input": "Сколько детей получило помощь от фонда?",
+    "expected_output": "Более 5000 детей.",
+    "source_file": "test_rag_051.txt"
+  },
+  {
+    "input": "Сколько лет функционирует фонд?",
+    "expected_output": "20 лет.",
+    "source_file": "test_rag_051.txt"
+  },
+  {
+    "input": "Какие инновационные методы лечения детских болезней финансирует фонд?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_051.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан маслокомбинат Сливочный край?",
+    "expected_output": "В 1952 году.",
+    "source_file": "test_rag_052.txt"
+  },
+  {
+    "input": "Сколько тонн масла производит маслокомбинат?",
+    "expected_output": "300 тонн.",
+    "source_file": "test_rag_052.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на маслокомбинате?",
+    "expected_output": "95 человек.",
+    "source_file": "test_rag_052.txt"
+  },
+  {
+    "input": "Какие инновационные вкусовые добавки использует маслокомбинат?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_052.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Какую цену имеют торты кондитера Елены Печенюхи?",
+    "expected_output": "От 50000 до 500000 рублей.",
+    "source_file": "test_rag_053.txt"
+  },
+  {
+    "input": "Сколько знаменитых людей заказывали торты Печенюхе?",
+    "expected_output": "200 знаменитых людей.",
+    "source_file": "test_rag_053.txt"
+  },
+  {
+    "input": "Сколько подписчиков в инстаграм Елены?",
+    "expected_output": "Более 500000 подписчиков.",
+    "source_file": "test_rag_053.txt"
+  },
+  {
+    "input": "Какие редкие ингредиенты импортирует Печенюха для своих тортов?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_053.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана танцевальная школа Па-де-грас?",
+    "expected_output": "В 1989 году.",
+    "source_file": "test_rag_054.txt"
+  },
+  {
+    "input": "Сколько студентов обучается в школе?",
+    "expected_output": "300 студентов.",
+    "source_file": "test_rag_054.txt"
+  },
+  {
+    "input": "Сколько преподавателей балета работает в школе?",
+    "expected_output": "25 преподавателей.",
+    "source_file": "test_rag_054.txt"
+  },
+  {
+    "input": "Какие международные балетные премии выиграли выпускники школы?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_054.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана табачная фабрика Ароматные листья?",
+    "expected_output": "В 1960 году.",
+    "source_file": "test_rag_055.txt"
+  },
+  {
+    "input": "Сколько сигарет производит фабрика?",
+    "expected_output": "200 миллионов сигарет.",
+    "source_file": "test_rag_055.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на фабрике?",
+    "expected_output": "450 сотрудников.",
+    "source_file": "test_rag_055.txt"
+  },
+  {
+    "input": "Какие инновационные фильтры для снижения вреда использует фабрика?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_055.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано агентство рекламы Броский образ?",
+    "expected_output": "В 2002 году.",
+    "source_file": "test_rag_056.txt"
+  },
+  {
+    "input": "Для скольких брендов разработало кампании агентство?",
+    "expected_output": "Для более чем 150 брендов.",
+    "source_file": "test_rag_056.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает в агентстве?",
+    "expected_output": "95 человек.",
+    "source_file": "test_rag_056.txt"
+  },
+  {
+    "input": "Какие награды на международных фестивалях рекламы выиграло агентство?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_056.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько патентов получил профессор Алексей Улыбкинский?",
+    "expected_output": "Более 20 патентов.",
+    "source_file": "test_rag_057.txt"
+  },
+  {
+    "input": "В скольких странах используется метод стоматолога Улыбкинского?",
+    "expected_output": "В 50 странах.",
+    "source_file": "test_rag_057.txt"
+  },
+  {
+    "input": "Сколько научных статей опубликовал профессор?",
+    "expected_output": "200 научных статей.",
+    "source_file": "test_rag_057.txt"
+  },
+  {
+    "input": "Какие новые методы имплантирования зубов планирует разработать Улыбкинский?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_057.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано производство мебели Деревянное великолепие?",
+    "expected_output": "В 1980 году.",
+    "source_file": "test_rag_058.txt"
+  },
+  {
+    "input": "Какую цену может иметь один предмет мебели?",
+    "expected_output": "До 1 миллиона рублей.",
+    "source_file": "test_rag_058.txt"
+  },
+  {
+    "input": "Сколько столяров работает на производстве?",
+    "expected_output": "80 столяров.",
+    "source_file": "test_rag_058.txt"
+  },
+  {
+    "input": "Какие инновационные методы обработки древесины используются в производстве?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_058.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана проектная организация Энергомир?",
+    "expected_output": "В 1999 году.",
+    "source_file": "test_rag_059.txt"
+  },
+  {
+    "input": "Сколько электростанций спроектировала и построила организация?",
+    "expected_output": "25 электростанций.",
+    "source_file": "test_rag_059.txt"
+  },
+  {
+    "input": "Сколько инженеров работает в компании?",
+    "expected_output": "250 инженеров.",
+    "source_file": "test_rag_059.txt"
+  },
+  {
+    "input": "Какие контракты с азиатскими странами подписала Энергомир?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_059.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Сколько кинотеатров в сети Волшебный экран?",
+    "expected_output": "45 кинотеатров.",
+    "source_file": "test_rag_060.txt"
+  },
+  {
+    "input": "Когда была основана сеть кинотеатров?",
+    "expected_output": "В 2001 году.",
+    "source_file": "test_rag_060.txt"
+  },
+  {
+    "input": "Сколько кинолюбителей посещают кинотеатры ежегодно?",
+    "expected_output": "Более 5 миллионов.",
+    "source_file": "test_rag_060.txt"
+  },
+  {
+    "input": "Какие виртуальные кинопроекционные системы используются в кинотеатрах?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_060.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано издательство Словестный мир?",
+    "expected_output": "В 1995 году.",
+    "source_file": "test_rag_061.txt"
+  },
+  {
+    "input": "Сколько книг опубликовало издательство?",
+    "expected_output": "Более 3000 книг.",
+    "source_file": "test_rag_061.txt"
+  },
+  {
+    "input": "Сколько авторов сотрудничает с издательством?",
+    "expected_output": "Более 500 авторов.",
+    "source_file": "test_rag_061.txt"
+  },
+  {
+    "input": "Какие награды получило издательство на международных книжных выставках?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_061.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан фитнес-центр Стальное тело?",
+    "expected_output": "В 2005 году.",
+    "source_file": "test_rag_062.txt"
+  },
+  {
+    "input": "Сколько филиалов у фитнес-центра?",
+    "expected_output": "35 филиалов.",
+    "source_file": "test_rag_062.txt"
+  },
+  {
+    "input": "Сколько клиентов посещают центры ежемесячно?",
+    "expected_output": "Более 50000 клиентов.",
+    "source_file": "test_rag_062.txt"
+  },
+  {
+    "input": "Какие новейшие технологии тренировок используются в центрах?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_062.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан сервис доставки еды ПитаниеХаус?",
+    "expected_output": "В 2012 году.",
+    "source_file": "test_rag_063.txt"
+  },
+  {
+    "input": "В скольких городах России работает сервис?",
+    "expected_output": "В 50 городах.",
+    "source_file": "test_rag_063.txt"
+  },
+  {
+    "input": "Сколько блюд готовит ПитаниеХаус ежедневно?",
+    "expected_output": "Более 10000 блюд.",
+    "source_file": "test_rag_063.txt"
+  },
+  {
+    "input": "Какие сертификаты пищевой безопасности имеет сервис?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_063.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана аптечная сеть Аптека фарма?",
+    "expected_output": "В 1998 году.",
+    "source_file": "test_rag_064.txt"
+  },
+  {
+    "input": "Сколько филиалов у аптечной сети?",
+    "expected_output": "250 филиалов.",
+    "source_file": "test_rag_064.txt"
+  },
+  {
+    "input": "Сколько наименований лекарств предлагает сеть?",
+    "expected_output": "Более 5000 наименований.",
+    "source_file": "test_rag_064.txt"
+  },
+  {
+    "input": "Какие экспериментальные лекарства разрабатывает производство аптеки?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_064.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано турагентство Путешествие мечты?",
+    "expected_output": "В 2003 году.",
+    "source_file": "test_rag_065.txt"
+  },
+  {
+    "input": "Сколько путешествий организовало турагентство?",
+    "expected_output": "Более 100000 путешествий.",
+    "source_file": "test_rag_065.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает в турагентстве?",
+    "expected_output": "120 сотрудников.",
+    "source_file": "test_rag_065.txt"
+  },
+  {
+    "input": "Какие экспедиции на вершины гор организует турагентство?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_065.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Ярких цветов?",
+    "expected_output": "В 1970 году.",
+    "source_file": "test_rag_066.txt"
+  },
+  {
+    "input": "Сколько тонн лакокрасочной продукции производит компания?",
+    "expected_output": "50000 тонн.",
+    "source_file": "test_rag_066.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется продукция?",
+    "expected_output": "В 40 странах.",
+    "source_file": "test_rag_066.txt"
+  },
+  {
+    "input": "Какие экологичные краски на основе растительных компонентов разработала компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_066.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана ветеринарная клиника Здоровое животное?",
+    "expected_output": "В 2008 году.",
+    "source_file": "test_rag_067.txt"
+  },
+  {
+    "input": "Сколько ветеринаров-специалистов работает в клинике?",
+    "expected_output": "35 ветеринаров.",
+    "source_file": "test_rag_067.txt"
+  },
+  {
+    "input": "Сколько животных посещают клинику ежегодно?",
+    "expected_output": "Более 20000 животных.",
+    "source_file": "test_rag_067.txt"
+  },
+  {
+    "input": "Какие экзотические животные лечит клиника специально?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_067.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана строительная компания Надежный фундамент?",
+    "expected_output": "В 1990 году.",
+    "source_file": "test_rag_068.txt"
+  },
+  {
+    "input": "Сколько жилых зданий построила компания?",
+    "expected_output": "Более 150 зданий.",
+    "source_file": "test_rag_068.txt"
+  },
+  {
+    "input": "Сколько рабочих и инженеров работает в компании?",
+    "expected_output": "600 рабочих и инженеров.",
+    "source_file": "test_rag_068.txt"
+  },
+  {
+    "input": "Какие премии за архитектуру получили постройки компании?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_068.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана спортивная команда Динамо Завтрашних героев?",
+    "expected_output": "В 1987 году.",
+    "source_file": "test_rag_069.txt"
+  },
+  {
+    "input": "Сколько раз выиграла чемпионат России команда?",
+    "expected_output": "Три раза подряд.",
+    "source_file": "test_rag_069.txt"
+  },
+  {
+    "input": "Сколько волейболистов играет в команде?",
+    "expected_output": "20 волейболистов.",
+    "source_file": "test_rag_069.txt"
+  },
+  {
+    "input": "Какие олимпийские медали выиграла команда волейболистов?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_069.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана театральная студия Вдохновение?",
+    "expected_output": "В 1996 году.",
+    "source_file": "test_rag_070.txt"
+  },
+  {
+    "input": "Сколько студентов обучается в студии?",
+    "expected_output": "200 студентов.",
+    "source_file": "test_rag_070.txt"
+  },
+  {
+    "input": "Сколько преподавателей работает в студии?",
+    "expected_output": "15 преподавателей.",
+    "source_file": "test_rag_070.txt"
+  },
+  {
+    "input": "Какие спектакли на международных театральных фестивалях показала студия?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_070.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания мобильной связи Мобильный рай?",
+    "expected_output": "В 2007 году.",
+    "source_file": "test_rag_071.txt"
+  },
+  {
+    "input": "Сколько абонентов обслуживает компания?",
+    "expected_output": "2 миллиона абонентов.",
+    "source_file": "test_rag_071.txt"
+  },
+  {
+    "input": "Сколько магазинов у компании по России?",
+    "expected_output": "500 магазинов.",
+    "source_file": "test_rag_071.txt"
+  },
+  {
+    "input": "Какие инновационные услуги 5G предлагает компания своим клиентам?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_071.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана керамическая мастерская Глиняные шедевры?",
+    "expected_output": "В 1985 году.",
+    "source_file": "test_rag_072.txt"
+  },
+  {
+    "input": "Сколько керамистов работает на мастерской?",
+    "expected_output": "25 керамистов.",
+    "source_file": "test_rag_072.txt"
+  },
+  {
+    "input": "В скольких странах находятся коллекции изделий мастерской?",
+    "expected_output": "В 20 странах.",
+    "source_file": "test_rag_072.txt"
+  },
+  {
+    "input": "Какие редкие техники керамики используются в мастерской?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_072.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Надзор системы?",
+    "expected_output": "В 2010 году.",
+    "source_file": "test_rag_073.txt"
+  },
+  {
+    "input": "Сколько систем видеонаблюдения установила компания?",
+    "expected_output": "Более 5000 систем.",
+    "source_file": "test_rag_073.txt"
+  },
+  {
+    "input": "Сколько инженеров и техников работает в компании?",
+    "expected_output": "150 инженеров и техников.",
+    "source_file": "test_rag_073.txt"
+  },
+  {
+    "input": "Какие системы искусственного интеллекта используются в видеонаблюдении?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_073.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана логистическая компания Быстрая доставка?",
+    "expected_output": "В 2000 году.",
+    "source_file": "test_rag_074.txt"
+  },
+  {
+    "input": "Сколько грузов доставляет компания ежегодно?",
+    "expected_output": "Более 100000 грузов.",
+    "source_file": "test_rag_074.txt"
+  },
+  {
+    "input": "Сколько грузовиков в парке компании?",
+    "expected_output": "500 грузовиков.",
+    "source_file": "test_rag_074.txt"
+  },
+  {
+    "input": "Какие дроны для доставки использует компания в крупных городах?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_074.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан Ботанический сад Растительное царство?",
+    "expected_output": "В 1920 году.",
+    "source_file": "test_rag_075.txt"
+  },
+  {
+    "input": "Сколько видов растений в саду?",
+    "expected_output": "Более 5000 видов.",
+    "source_file": "test_rag_075.txt"
+  },
+  {
+    "input": "Какую площадь занимает ботанический сад?",
+    "expected_output": "100 гектаров.",
+    "source_file": "test_rag_075.txt"
+  },
+  {
+    "input": "Какие редкие виды растений находятся на грани исчезновения в саду?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_075.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Ткани мира?",
+    "expected_output": "В 1995 году.",
+    "source_file": "test_rag_076.txt"
+  },
+  {
+    "input": "Сколько тонн ткани производит компания?",
+    "expected_output": "10000 тонн.",
+    "source_file": "test_rag_076.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на производстве?",
+    "expected_output": "500 сотрудников.",
+    "source_file": "test_rag_076.txt"
+  },
+  {
+    "input": "Какие нанотехнологии применяет компания в производстве ткани?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_076.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана консалтинговая компания БизнесСервис?",
+    "expected_output": "В 2001 году.",
+    "source_file": "test_rag_077.txt"
+  },
+  {
+    "input": "Сколько крупных компаний консультировала БизнесСервис?",
+    "expected_output": "Более 300 компаний.",
+    "source_file": "test_rag_077.txt"
+  },
+  {
+    "input": "Сколько консультантов работает в компании?",
+    "expected_output": "80 консультантов.",
+    "source_file": "test_rag_077.txt"
+  },
+  {
+    "input": "Какие инновационные методы бизнес-аналитики разработала компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_077.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана школа английского языка Говорящий мир?",
+    "expected_output": "В 1998 году.",
+    "source_file": "test_rag_078.txt"
+  },
+  {
+    "input": "Сколько студентов учится одновременно?",
+    "expected_output": "Более 2000 студентов.",
+    "source_file": "test_rag_078.txt"
+  },
+  {
+    "input": "Сколько преподавателей работает в школе?",
+    "expected_output": "100 преподавателей.",
+    "source_file": "test_rag_078.txt"
+  },
+  {
+    "input": "Какие дополнительные языки кроме английского преподает школа?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_078.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана аудиторская компания Финансовые итоги?",
+    "expected_output": "В 2003 году.",
+    "source_file": "test_rag_079.txt"
+  },
+  {
+    "input": "Сколько крупных компаний аудировала компания?",
+    "expected_output": "Более 500 компаний.",
+    "source_file": "test_rag_079.txt"
+  },
+  {
+    "input": "Сколько аудиторов работает в компании?",
+    "expected_output": "120 аудиторов.",
+    "source_file": "test_rag_079.txt"
+  },
+  {
+    "input": "Какие международные аудиторские стандарты имеет компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_079.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан гостель Путник?",
+    "expected_output": "В 2002 году.",
+    "source_file": "test_rag_080.txt"
+  },
+  {
+    "input": "Сколько кроватей в гостеле?",
+    "expected_output": "200 кроватей.",
+    "source_file": "test_rag_080.txt"
+  },
+  {
+    "input": "Сколько туристов принимает гостель ежегодно?",
+    "expected_output": "Более 50000 туристов.",
+    "source_file": "test_rag_080.txt"
+  },
+  {
+    "input": "Какие инновационные услуги для путешественников предлагает гостель?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_080.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан развлекательный центр Веселое приключение?",
+    "expected_output": "В 2004 году.",
+    "source_file": "test_rag_081.txt"
+  },
+  {
+    "input": "Сколько аттракционов в центре?",
+    "expected_output": "Более 50 аттракционов.",
+    "source_file": "test_rag_081.txt"
+  },
+  {
+    "input": "Сколько посетителей приходит в центр ежегодно?",
+    "expected_output": "Более 1 миллиона посетителей.",
+    "source_file": "test_rag_081.txt"
+  },
+  {
+    "input": "Какие технологии виртуальной реальности используются в центре?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_081.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Прозрачное будущее?",
+    "expected_output": "В 1975 году.",
+    "source_file": "test_rag_082.txt"
+  },
+  {
+    "input": "Сколько тонн стекла производит компания?",
+    "expected_output": "500000 тонн.",
+    "source_file": "test_rag_082.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на производстве?",
+    "expected_output": "800 сотрудников.",
+    "source_file": "test_rag_082.txt"
+  },
+  {
+    "input": "Какие инновационные технологии переработки стекла использует компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_082.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано юридическое бюро Законная защита?",
+    "expected_output": "В 1997 году.",
+    "source_file": "test_rag_083.txt"
+  },
+  {
+    "input": "Сколько судебных дел ведет бюро ежегодно?",
+    "expected_output": "Более 300 дел.",
+    "source_file": "test_rag_083.txt"
+  },
+  {
+    "input": "Сколько адвокатов работает в бюро?",
+    "expected_output": "50 адвокатов.",
+    "source_file": "test_rag_083.txt"
+  },
+  {
+    "input": "Какие крупные судебные дела выиграло бюро за последние годы?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_083.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан салон красоты Королевская роза?",
+    "expected_output": "В 1992 году.",
+    "source_file": "test_rag_084.txt"
+  },
+  {
+    "input": "Сколько филиалов у салона?",
+    "expected_output": "6 филиалов.",
+    "source_file": "test_rag_084.txt"
+  },
+  {
+    "input": "Сколько клиентов обслуживает салон ежегодно?",
+    "expected_output": "Более 30000 клиентов.",
+    "source_file": "test_rag_084.txt"
+  },
+  {
+    "input": "Какие инновационные омоложивающие процедуры предлагает салон?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_084.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Хрустальная капля?",
+    "expected_output": "В 1960 году.",
+    "source_file": "test_rag_085.txt"
+  },
+  {
+    "input": "Сколько бутылок водки производит компания?",
+    "expected_output": "10 миллионов бутылок.",
+    "source_file": "test_rag_085.txt"
+  },
+  {
+    "input": "В скольких странах продается водка?",
+    "expected_output": "В 30 странах.",
+    "source_file": "test_rag_085.txt"
+  },
+  {
+    "input": "Какие редкие ингредиенты используются в премиальных сортах водки?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_085.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Сахарный рай?",
+    "expected_output": "В 1985 году.",
+    "source_file": "test_rag_086.txt"
+  },
+  {
+    "input": "Сколько тонн сладостей производит компания?",
+    "expected_output": "5000 тонн.",
+    "source_file": "test_rag_086.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется продукция?",
+    "expected_output": "В 25 странах.",
+    "source_file": "test_rag_086.txt"
+  },
+  {
+    "input": "Какие экзотические вкусовые комбинации разработала компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_086.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано производство Механическое совершенство?",
+    "expected_output": "В 1960 году.",
+    "source_file": "test_rag_087.txt"
+  },
+  {
+    "input": "Сколько станков выпустило производство?",
+    "expected_output": "Более 5000 станков.",
+    "source_file": "test_rag_087.txt"
+  },
+  {
+    "input": "Сколько инженеров и рабочих работает на производстве?",
+    "expected_output": "400 инженеров и рабочих.",
+    "source_file": "test_rag_087.txt"
+  },
+  {
+    "input": "Какие инновационные технологии ЧПУ использует производство?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_087.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана экологическая организация Зеленая земля?",
+    "expected_output": "В 2002 году.",
+    "source_file": "test_rag_088.txt"
+  },
+  {
+    "input": "Сколько деревьев посадила организация?",
+    "expected_output": "Более 1 миллиона деревьев.",
+    "source_file": "test_rag_088.txt"
+  },
+  {
+    "input": "Сколько сотрудников-волонтеров работает в организации?",
+    "expected_output": "120 волонтеров.",
+    "source_file": "test_rag_088.txt"
+  },
+  {
+    "input": "Какие редкие виды растений восстанавливает организация?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_088.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания ИгроМир?",
+    "expected_output": "В 2007 году.",
+    "source_file": "test_rag_089.txt"
+  },
+  {
+    "input": "Сколько видеоигр выпустила компания?",
+    "expected_output": "15 видеоигр.",
+    "source_file": "test_rag_089.txt"
+  },
+  {
+    "input": "Сколько раз скачаны видеоигры компании?",
+    "expected_output": "Более 50 миллионов раз.",
+    "source_file": "test_rag_089.txt"
+  },
+  {
+    "input": "Какие награды получила компания на международных игровых выставках?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_089.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Смешной заяц?",
+    "expected_output": "В 1995 году.",
+    "source_file": "test_rag_090.txt"
+  },
+  {
+    "input": "Сколько игрушек производит компания?",
+    "expected_output": "2 миллиона игрушек.",
+    "source_file": "test_rag_090.txt"
+  },
+  {
+    "input": "В скольких странах экспортируются игрушки?",
+    "expected_output": "В 40 странах.",
+    "source_file": "test_rag_090.txt"
+  },
+  {
+    "input": "Какие STEM-игрушки разработала компания для образования детей?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_090.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана академия Чемпион?",
+    "expected_output": "В 2001 году.",
+    "source_file": "test_rag_091.txt"
+  },
+  {
+    "input": "Сколько спортсменов учится в академии?",
+    "expected_output": "Более 500 спортсменов.",
+    "source_file": "test_rag_091.txt"
+  },
+  {
+    "input": "Сколько тренеров работает в академии?",
+    "expected_output": "80 тренеров.",
+    "source_file": "test_rag_091.txt"
+  },
+  {
+    "input": "Какие олимпийские медалисты прошли подготовку в академии?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_091.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Стальная крыша?",
+    "expected_output": "В 1970 году.",
+    "source_file": "test_rag_092.txt"
+  },
+  {
+    "input": "Сколько тонн кровельных материалов производит компания?",
+    "expected_output": "50000 тонн.",
+    "source_file": "test_rag_092.txt"
+  },
+  {
+    "input": "Сколько сотрудников работает на производстве?",
+    "expected_output": "350 сотрудников.",
+    "source_file": "test_rag_092.txt"
+  },
+  {
+    "input": "Какие инновационные материалы для зеленых крыш разработала компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_092.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда был основан журнал Творчество и искусство?",
+    "expected_output": "В 1999 году.",
+    "source_file": "test_rag_093.txt"
+  },
+  {
+    "input": "Какой тираж журнала?",
+    "expected_output": "100000 копий.",
+    "source_file": "test_rag_093.txt"
+  },
+  {
+    "input": "Сколько подписчиков у онлайн версии журнала?",
+    "expected_output": "500000 подписчиков.",
+    "source_file": "test_rag_093.txt"
+  },
+  {
+    "input": "Какие премии за журналистику получил журнал?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_093.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда было основано производство Морская дума?",
+    "expected_output": "В 1980 году.",
+    "source_file": "test_rag_094.txt"
+  },
+  {
+    "input": "Сколько тонн консервов производит компания?",
+    "expected_output": "10000 тонн.",
+    "source_file": "test_rag_094.txt"
+  },
+  {
+    "input": "В скольких странах экспортируются консервы?",
+    "expected_output": "В 20 странах.",
+    "source_file": "test_rag_094.txt"
+  },
+  {
+    "input": "Какие инновационные методы консервирования использует компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_094.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Священный источник?",
+    "expected_output": "В 1995 году.",
+    "source_file": "test_rag_095.txt"
+  },
+  {
+    "input": "Сколько литров минеральной воды производит компания?",
+    "expected_output": "500 миллионов литров.",
+    "source_file": "test_rag_095.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется минеральная вода?",
+    "expected_output": "В 40 странах.",
+    "source_file": "test_rag_095.txt"
+  },
+  {
+    "input": "Какие минеральные источники разведаны компанией в других регионах?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_095.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана школа верховой езды Королевский конь?",
+    "expected_output": "В 1992 году.",
+    "source_file": "test_rag_096.txt"
+  },
+  {
+    "input": "Сколько лошадей в школе?",
+    "expected_output": "50 лошадей.",
+    "source_file": "test_rag_096.txt"
+  },
+  {
+    "input": "Сколько студентов учится в школе?",
+    "expected_output": "Более 200 студентов.",
+    "source_file": "test_rag_096.txt"
+  },
+  {
+    "input": "Какие редкие породы лошадей разводит школа?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_096.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана лоцманская служба Безопасные пути?",
+    "expected_output": "В 1920 году.",
+    "source_file": "test_rag_097.txt"
+  },
+  {
+    "input": "Сколько кораблей обслужила служба?",
+    "expected_output": "Более 50000 кораблей.",
+    "source_file": "test_rag_097.txt"
+  },
+  {
+    "input": "Сколько лоцманов работает в службе?",
+    "expected_output": "100 лоцманов.",
+    "source_file": "test_rag_097.txt"
+  },
+  {
+    "input": "Какие инновационные методы навигации использует служба в сложных условиях?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_097.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Ароматические грезы?",
+    "expected_output": "В 2000 году.",
+    "source_file": "test_rag_098.txt"
+  },
+  {
+    "input": "Сколько флаконов парфюмерии производит компания?",
+    "expected_output": "1 миллион флаконов.",
+    "source_file": "test_rag_098.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется парфюмерия?",
+    "expected_output": "В 30 странах.",
+    "source_file": "test_rag_098.txt"
+  },
+  {
+    "input": "Какие экзотические ингредиенты используются в премиальных линиях парфюмерии?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_098.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана музыкальная школа Звездная музыка?",
+    "expected_output": "В 1987 году.",
+    "source_file": "test_rag_099.txt"
+  },
+  {
+    "input": "Сколько студентов обучается в школе?",
+    "expected_output": "Более 400 студентов.",
+    "source_file": "test_rag_099.txt"
+  },
+  {
+    "input": "Сколько преподавателей музыки работает?",
+    "expected_output": "50 преподавателей.",
+    "source_file": "test_rag_099.txt"
+  },
+  {
+    "input": "Какие выпускники школы стали известными музыкантами мирового уровня?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_099.txt",
+    "is_negative": true
+  },
+  {
+    "input": "Когда была основана компания Зеленая экспертиза?",
+    "expected_output": "В 2003 году.",
+    "source_file": "test_rag_100.txt"
+  },
+  {
+    "input": "Сколько единиц садовой техники производит компания?",
+    "expected_output": "20000 единиц.",
+    "source_file": "test_rag_100.txt"
+  },
+  {
+    "input": "В скольких странах экспортируется садовая техника?",
+    "expected_output": "В 25 странах.",
+    "source_file": "test_rag_100.txt"
+  },
+  {
+    "input": "Какие инновационные методы обработки газонов предлагает компания?",
+    "expected_output": "Информация недоступна",
+    "source_file": "test_rag_100.txt",
+    "is_negative": true
+  }
+]
