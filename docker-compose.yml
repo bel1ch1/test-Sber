@@ -90,6 +90,7 @@ services:
       # - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
     volumes:
       - ./data/uploads:/app/data/uploads
+      - ./logs:/app/logs
     stdin_open: true
     tty: true
     profiles: ["cli"]

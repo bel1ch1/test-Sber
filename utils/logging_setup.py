@@ -25,7 +25,7 @@ class JsonFormatter(logging.Formatter):
 
 def configure_agent_logging(
     *,
-    log_path: str = "data/logs/agent.log",
+    log_path: str = "logs/agent.log",
     level: int = logging.INFO,
     max_bytes: int = 2_000_000,
     backup_count: int = 3,
