@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
+import io
 import json
 import os
 import random
+import sys
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Sequence
+import logging
 
 from datasets import Dataset
 from ragas import RunConfig, evaluate
@@ -321,6 +325,65 @@ def _wrap_ragas_llm(llm: Any) -> Any:
     return LangchainLLM(llm)
 
 
+class _FilteredStderr(io.TextIOBase):
+    def __init__(self, target: io.TextIOBase) -> None:
+        self._target = target
+        self._buffer = ""
+
+    def write(self, s: str) -> int:  # type: ignore[override]
+        if not s:
+            return 0
+
+        self._buffer += s
+        written = 0
+
+        while "\n" in self._buffer:
+            line, self._buffer = self._buffer.split("\n", 1)
+            # Suppress noisy error lines while keeping progress lines.
+            if (
+                line.startswith("\r")
+                or "it/s" in line
+                or "ETA" in line
+                or "%" in line
+            ):
+                self._target.write(line + "\n")
+                self._target.flush()
+            written += len(line) + 1
+
+        if "\r" in self._buffer and "\n" not in self._buffer:
+            self._target.write(self._buffer)
+            self._target.flush()
+            written += len(self._buffer)
+            self._buffer = ""
+
+        return written
+
+    def flush(self) -> None:  # type: ignore[override]
+        self._target.flush()
+
+
+@contextlib.contextmanager
+def _suppress_stderr_errors() -> Iterable[None]:
+    """Hide noisy stderr errors, keep progress bars."""
+    filtered = _FilteredStderr(sys.stderr)
+    with contextlib.redirect_stderr(filtered):
+        yield
+
+
+def _silence_noisy_loggers() -> None:
+    for name in (
+        "ragas",
+        "langchain",
+        "langchain_core",
+        "langchain_ollama",
+        "httpx",
+        "urllib3",
+    ):
+        logger = logging.getLogger(name)
+        logger.setLevel(logging.CRITICAL)
+        logger.propagate = False
+
+
 def run_evaluation(config_path: str) -> Dict[str, Any]:
     # Optional: enable LangSmith tracing for the generator/judge LLM calls.
     # Controlled via env vars (LANGCHAIN_TRACING_V2, LANGCHAIN_API_KEY, etc).
@@ -353,6 +416,7 @@ def run_evaluation(config_path: str) -> Dict[str, Any]:
         temperature=0.0,
     )
     judge_llm = _create_judge_llm(config)
+    _silence_noisy_loggers()
 
     agent = ChatAgent(
         llm=generator_llm,
@@ -426,21 +490,22 @@ def run_evaluation(config_path: str) -> Dict[str, Any]:
     embeddings = _create_embeddings(config)
     use_collections = config.judge_provider.lower().strip() == "openai"
     ragas_llm = _wrap_ragas_llm(judge_llm) if use_collections else judge_llm
-    ragas_result = evaluate(
-        dataset,
-        metrics=_get_ragas_metrics(
+    with _suppress_stderr_errors():
+        ragas_result = evaluate(
+            dataset,
+            metrics=_get_ragas_metrics(
+                llm=ragas_llm,
+                embeddings=embeddings,
+                use_collections=use_collections,
+            ),
             llm=ragas_llm,
             embeddings=embeddings,
-            use_collections=use_collections,
-        ),
-        llm=ragas_llm,
-        embeddings=embeddings,
-        run_config=RunConfig(
-            timeout=timeout_value,
-            max_retries=config.ragas_max_retries,
-            max_workers=config.ragas_max_workers,
-        ),
-    )
+            run_config=RunConfig(
+                timeout=timeout_value,
+                max_retries=config.ragas_max_retries,
+                max_workers=config.ragas_max_workers,
+            ),
+        )
 
     positive_samples = [
         sample for sample in eval_samples if not _is_negative_sample(sample)
